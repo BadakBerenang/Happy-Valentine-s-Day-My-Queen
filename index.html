@@ -4,12 +4,25 @@
 <meta charset="UTF-8">
 <title>Valentine Surprise For My Sunshine 💜</title>
 <style>
-body{margin:0;font-family:Arial;background:#140018;color:white;overflow:hidden}
-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;z-index:-2;pointer-events:none}
-.overlay{position:fixed;inset:0;background:radial-gradient(circle,#3b0055,#140018);z-index:-1;pointer-events:none}
+body{margin:0;font-family:Arial;background:#000000;color:white;overflow:hidden}
+body{
+  margin:0;
+  font-family:Arial;
+  color:white;
+  overflow:hidden;
+  background:url('WhatsApp Image 2026-02-09 at 02.32.21.jpeg') center/cover no-repeat fixed;
+}
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(20,0,24,0.65);
+  backdrop-filter:blur(2px);
+  z-index:-1;
+}
+.overlay{position:fixed;inset:0;background:radial-gradient(circle,#1a0033,#000000);z-index:-1;pointer-events:none}
 .center{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;z-index:5}
-.neon{color:#ff7cff;text-shadow:0 0 5px #ff7cff,0 0 15px #ff7cff,0 0 30px #ff7cff}
-button{padding:12px 20px;border:none;border-radius:12px;background:#ff4fd8;color:white;font-size:16px;cursor:pointer;margin:6px}
+.neon{color:#b266ff;text-shadow:0 0 5px #b266ff,0 0 15px #7f3fff,0 0 30px #4b0082}
+button{padding:12px 20px;border:none;border-radius:12px;background:#5e2b97;color:white;font-size:16px;cursor:pointer;margin:6px}
 input{padding:10px;border-radius:10px;border:none;text-align:center}
 .heart{position:fixed;font-size:20px;animation:float 8s linear infinite;pointer-events:none;z-index:1}
 @keyframes float{from{transform:translateY(100vh)}to{transform:translateY(-10vh)}}
@@ -20,10 +33,8 @@ input{padding:10px;border-radius:10px;border:none;text-align:center}
 </head>
 <body>
 
-<video autoplay loop muted>
-  <source src="https://cdn.coverr.co/videos/coverr-romantic-sunset-1577/1080p.mp4" type="video/mp4">
-</video>
-<div class="overlay"></div>
+
+<div class="bg-overlay"></div>
 
 <audio autoplay loop>
   <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_2b9f7f3a58.mp3" type="audio/mpeg">
@@ -47,15 +58,15 @@ home();
 
 function start(){
   const input=document.getElementById('nameInput');
-  if(input){ name=input.value||name||'My Love'; }
+  if(input){ name=input.value||name||'Cepot'; }
   document.getElementById('app').innerHTML=`
   <div class='card'>
     <h2 class='neon'>From: ${name} yang paling ganteng se alam semesta</h2>
     <p>Haii bybyy...</p>
     <p>I Love You More My Sunshine...</p>
-    <button onclick='confess()'>Klik ini deh, aku punya quiz buat kamu ❤️</button>
-    <button onclick='letter()'>Cepot bersabda 💌</button>
-    <button onclick='qr()'>Klik ini juga byby nanti kamu scan yah 📱</button>
+    <button onclick='confess()'>❔ QUIZ & CHALLENGE ❕</button>
+    <button onclick='letter()'>💌 CEPOT BERSABDA 💌</button>
+    <button onclick='qr()'>📱 ADA QR CODE DISINI BYBY 📱</button>
     <br>
     <button onclick='home()'>⬅ Back</button>
   </div>`;
@@ -64,8 +75,55 @@ function start(){
 function letter(){
   document.getElementById('app').innerHTML=`
   <div class='card'>
-    <h2 class='neon'>I Love You More My Sunshine 😘💋👅💦</h2>
-    <p>Bybyy, aku sayang banget sama kamu, aku cinta banget sama kamu hihihi...</p>
+    <p>Happy Valentine's Day Bybyy 😘💋👅💦</p>
+    <button onclick='letter1()'>➡ Next</button>
+    <button onclick='start()'>⬅ Back</button>
+  </div>`;
+}
+
+function letter1(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <p>Makasih ya sayang kamu udah jadi rumah buat aku</p>
+    <button onclick='letter2()'>➡ Next</button>
+    <button onclick='letter()'>⬅ Back</button>
+  </div>`;
+}
+
+function letter2(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <p>Aku janji akan selalu usahain buat kamu bahagia</p>
+    <button onclick='letter3()'>➡ Next</button>
+    <button onclick='letter1()'>⬅ Back</button>
+  </div>`;
+}
+
+function letter3(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <p>Aku mau selamanya sama kamu byybyy</p>
+    <button onclick='letter4()'>➡ Next</button>
+    <button onclick='letter2()'>⬅ Back</button>
+  </div>`;
+}
+
+function letter4(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <p>Jangan pernah ngereasa sendiri ya</p>
+    <p>kamu selalu punya aku kapanpun</p>
+    <button onclick='letter5()'>➡ Next</button>
+    <button onclick='letter3()'>⬅ Back</button>
+  </div>`;
+}
+
+function letter5(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <p>Maaf ya sayang, kalo aku masih banyak kurangnya.</p>
+    <p>Makasih juga kamu udah ada buat aku, bukan cuma pasangan, tapi kamu juga jadi tempat buat aku pulang.</p>
+    <p>Ah aku bingung mau bilang apalagi, intinya aku sayang banget sama kamu aku cinta banget sama kamu selamanya sama kamu.</p>
     <button onclick='start()'>⬅ Back</button>
   </div>`;
 }
@@ -84,7 +142,7 @@ function confess(){
 }
 
 function notReady(){
-  alert('WLEEEE 😝❗ GAK BOLEH, HARUS SIAP BYBYYY 💜🔥');
+  alert('HARUS SIAP WLEEE 😜😜');
   yesStep1();
 }
 
@@ -92,24 +150,62 @@ function notReady(){
 function yesStep1(){
   document.getElementById('app').innerHTML=`
   <div class='card'>
-    <h2 class='neon'>AWWW AKU MAU CROTTT</h2>
-    <p>Hihihiihiihi sukakk bangett...</p>
-    <p><b>Seberapa sayang kamu sama aku bybyy? 😘</b></p>
+    <h2 class='neon'>QUESTION</h2>
+    <p><b>Bybyy, seberapa sayang kamu sama aku?</b></p>
     <button onclick='yesStep2()'>SAYANG BANGET SAMPE CROT 💦</button>
     <br>
-    <button onclick='start()'>PIKIR AJA SENDIRI</button>
+    <button onclick='notReady1()'>PIKIR AJA SENDIRI</button>
   </div>`;
+}
+
+function notReady1(){
+  alert('DIH KOK KAMU GITU 😒😒');
+  yesStep2();
 }
 
 // STEP 2
 function yesStep2(){
   document.getElementById('app').innerHTML=`
   <div class='card'>
-    <h2 class='neon'>Bybyy 😘</h2>
-    <p>Kalau gitu aku nanya lagi yaa...</p>
-    <p><b>Kamu mau gak jadi pasangan aku selamanya, bukan cuma valentine doang? 🥺💍</b></p>
-    <button onclick='finalYes()'>MAU BANGET 😭💜</button>
+    <h2 class='neon'>CHALLENGE</h2>
+    <p><b>Cium cepot 10 kali</b></p>
+    <button onclick='yesStep3()'>Cini cium byybyy 😘</button>
     <br>
+    <button onclick='notReady2()'>Gamau kamu bau 🐐</button>
+  </div>`;
+}
+
+function notReady2(){
+  alert('HUEKKK 🤢🤢');
+  yesStep3();
+}
+
+// STEP 3
+function yesStep3(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h2 class='neon'>QUESTION</h2>
+    <p><b>Byybyy, kamu bakal sama aku selamanya kan?</b></p>
+    <button onclick='yesStep4()'>Iya sayangku, cintaku, i love you</button>
+    <br>
+    <button onclick='notReady3()'>GAAH MALES</button>
+  </div>`;
+}
+
+function notReady3(){
+  alert('IHHH JAHATTT 😔😔');
+  yesStep4();
+}
+
+// STEP 4
+function yesStep4(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h2 class='neon'>CHALLENGE</h2>
+    <p><b>CEPONGIN CEPOT TERUS TELEN</b></p>
+    <button onclick='finalYes()'>CINI AKU CEPONG SAMPE CROT 999 KALI 💦💦</button>
+    <br>
+    <button onclick='finalYes()'>OGAHHH SEPONG AJA SENDIRI 😒😒</button>
   </div>`;
 }
 
@@ -117,44 +213,33 @@ function finalYes(){
   for(let i=0;i<100;i++){
     let c=document.createElement('div');
     c.className='confetti';
-    c.innerText='💦';
+    c.innerText='😘💋👅💦';
     c.style.left=Math.random()*100+'vw';
     c.style.top='-10px';
     document.body.appendChild(c);
     setTimeout(()=>c.remove(),4000);
   }
-  alert('I WILL ALWAYS LOVE YOU MY SUNSHINE 😘💋👅💦');
+  alert('I LOVE YOU MORE MY SUNSHINE 😘💋👅💦');
   document.getElementById('app').innerHTML=`
   <div class='card'>
-    <h2 class='neon'>I LOVE YOU FOREVER 💜</h2>
-    <p>Terima kasih udah mau sama aku 😭</p>
-    <p>Kamu adalah rumah, cinta, dan masa depan aku 💍</p>
-    <p><b>My Sunshine Forever 🌞💜</b></p>
-    <button onclick='start()'>⬅ Kembali ke Menu</button>
+    <h2 class='neon'>HIHIHI, MAU AKU UPDATE LAGI GA PERTANYAAN DAN CHALLENGENYA?</h2>
+    <p>Makasih ya byby kamu udah mau sama aku selama ini</p>
+    <p>aku mau selamanya kita bareng terus hihihi</p>
+    <p><b>CIUM DONG BYBY 😁</b></p>
+    <button onclick='start()'>BEKBEKBEKBEKBEK</button>
   </div>`;
 }
 
 function qr(){
   document.getElementById('app').innerHTML=`
   <div class='card'>
-    <h3 class='neon'>Scan ini sayangg 📱</h3>
+    <h3 class='neon'>Scan QR nya bybyy</h3>
     <p>Link surprise kamu:</p>
     <p style='word-break:break-all'>${location.href}</p>
     <p>Pasti kamu suka sama isinya 😏</p>
     <button onclick='start()'>GA AH MALES</button>
   </div>`;
 }
-
-// floating hearts
-setInterval(()=>{
-  let h=document.createElement('div');
-  h.className='heart';
-  h.innerText='😘💋👅💦';
-  h.style.left=Math.random()*100+'vw';
-  h.style.animationDuration=(5+Math.random()*5)+'s';
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),10000);
-},600);
 </script>
 </body>
 </html>
