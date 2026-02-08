@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Surprise For My Sunshine 💜</title>
+<style>
+body{margin:0;font-family:Arial;background:#140018;color:white;overflow:hidden}
+video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;z-index:-2;pointer-events:none}
+.overlay{position:fixed;inset:0;background:radial-gradient(circle,#3b0055,#140018);z-index:-1;pointer-events:none}
+.center{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;z-index:5}
+.neon{color:#ff7cff;text-shadow:0 0 5px #ff7cff,0 0 15px #ff7cff,0 0 30px #ff7cff}
+button{padding:12px 20px;border:none;border-radius:12px;background:#ff4fd8;color:white;font-size:16px;cursor:pointer;margin:6px}
+input{padding:10px;border-radius:10px;border:none;text-align:center}
+.heart{position:fixed;font-size:20px;animation:float 8s linear infinite;pointer-events:none;z-index:1}
+@keyframes float{from{transform:translateY(100vh)}to{transform:translateY(-10vh)}}
+.confetti{position:fixed;font-size:18px;animation:fall 4s linear;pointer-events:none;z-index:10}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+.card{background:rgba(0,0,0,.6);padding:25px;border-radius:20px;max-width:350px;z-index:10}
+</style>
+</head>
+<body>
+
+<video autoplay loop muted>
+  <source src="https://cdn.coverr.co/videos/coverr-romantic-sunset-1577/1080p.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_2b9f7f3a58.mp3" type="audio/mpeg">
+</audio>
+
+<div class="center" id="app"></div>
+
+<script>
+let name='My Love';
+
+function home(){
+  document.getElementById('app').innerHTML=`
+  <h1 class='neon'>Happy Valentine's Day My Sunshine 💜</h1>
+  <p>For: My Sunshine</p>
+  <input id='nameInput' placeholder='Siapa Nama Pacar Kamu?'>
+  <br>
+  <button onclick='start()'>Masuk sendiri atau aku masukin? 💌</button>`;
+}
+
+home();
+
+function start(){
+  const input=document.getElementById('nameInput');
+  if(input){ name=input.value||name||'My Love'; }
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h2 class='neon'>From: ${name} yang paling ganteng se alam semesta</h2>
+    <p>Haii bybyy...</p>
+    <p>I Love You More My Sunshine...</p>
+    <button onclick='confess()'>Klik ini deh, aku punya quiz buat kamu ❤️</button>
+    <button onclick='letter()'>Cepot bersabda 💌</button>
+    <button onclick='qr()'>Klik ini juga byby nanti kamu scan yah 📱</button>
+    <br>
+    <button onclick='home()'>⬅ Back</button>
+  </div>`;
+}
+
+function letter(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h2 class='neon'>I Love You More My Sunshine 😘💋👅💦</h2>
+    <p>Bybyy, aku sayang banget sama kamu, aku cinta banget sama kamu hihihi...</p>
+    <button onclick='start()'>⬅ Back</button>
+  </div>`;
+}
+
+function confess(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h2 class='neon'>${name}</h2>
+    <p>Byybyy, kamu mau kan jadi valentine aku selamanya?</p>
+    <button onclick='yesStep1()'>YES BABY AH.. AH..</button>
+    <br>
+    <button onclick='start()'>OGAH</button>
+  </div>`;
+}
+
+// STEP 1
+function yesStep1(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h2 class='neon'>${name}</h2>
+    <p>Hihihiihiihi sukakk bangett...</p>
+    <p><b>Seberapa sayang kamu sama aku bybyy? 😘</b></p>
+    <button onclick='yesStep2()'>BANGETTTT 😭❤️</button>
+    <br>
+    <button onclick='start()'>MALU 😳</button>
+  </div>`;
+}
+
+// STEP 2
+function yesStep2(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h2 class='neon'>Bybyy 😘</h2>
+    <p>Kalau gitu aku nanya lagi yaa...</p>
+    <p><b>Kamu mau gak jadi pasangan aku selamanya, bukan cuma valentine doang? 🥺💍</b></p>
+    <button onclick='finalYes()'>MAU BANGET 😭💜</button>
+    <br>
+    <button onclick='start()'>MALU 😳</button>
+  </div>`;
+}
+
+function finalYes(){
+  for(let i=0;i<100;i++){
+    let c=document.createElement('div');
+    c.className='confetti';
+    c.innerText='💦';
+    c.style.left=Math.random()*100+'vw';
+    c.style.top='-10px';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+  alert('I WILL ALWAYS LOVE YOU MY SUNSHINE 😘💋👅💦');
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h2 class='neon'>I LOVE YOU FOREVER 💜</h2>
+    <p>Terima kasih udah mau sama aku 😭</p>
+    <p>Kamu adalah rumah, cinta, dan masa depan aku 💍</p>
+    <p><b>My Sunshine Forever 🌞💜</b></p>
+    <button onclick='start()'>⬅ Kembali ke Menu</button>
+  </div>`;
+}
+
+function qr(){
+  document.getElementById('app').innerHTML=`
+  <div class='card'>
+    <h3 class='neon'>Scan ini sayangg 📱</h3>
+    <p>Link surprise kamu:</p>
+    <p style='word-break:break-all'>${location.href}</p>
+    <p>Pasti kamu suka sama isinya 😏</p>
+    <button onclick='start()'>GA AH MALES</button>
+  </div>`;
+}
+
+// floating hearts
+setInterval(()=>{
+  let h=document.createElement('div');
+  h.className='heart';
+  h.innerText='😘💋👅💦';
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),10000);
+},600);
+</script>
+</body>
+</html>
