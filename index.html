@@ -73,12 +73,19 @@ function letter(){
 function confess(){
   document.getElementById('app').innerHTML=`
   <div class='card'>
-    <h2 class='neon'>${name}</h2>
-    <p>Byybyy, kamu mau kan jadi valentine aku selamanya? 😘</p>
-    <button onclick='yesStep1()'>YES BABY AH.. AH.. 💦</button>
+    <h2 class='neon'>INFORMATION</h2>
+    <p>Hai bybyy, jadi disini nanti bakalan ada quiz</p>
+    <p>lalu ada challenge juga byby</p>
+    <p><b>KAMU SIAP KAN BYBY?</b></p>
+    <button onclick='yesStep1()'>YES BABY AH.. AH..</button>
     <br>
-    <button onclick='start()'>OGAH</button>
+    <button onclick='notReady()'>AHHH AKU GASIAP</button>
   </div>`;
+}
+
+function notReady(){
+  alert('WLEEEE 😝❗ GAK BOLEH, HARUS SIAP BYBYYY 💜🔥');
+  yesStep1();
 }
 
 // STEP 1
@@ -98,12 +105,11 @@ function yesStep1(){
 function yesStep2(){
   document.getElementById('app').innerHTML=`
   <div class='card'>
-    <h2 class='neon'>HIHIHI CROT CROT CROT</h2>
-    <p>jawab lagii bybyy</p>
-    <p><b>kepooo yaaa kamu? hihihihih</b></p>
-    <button onclick='finalYes()'>KEPO BANGET IH</button>
+    <h2 class='neon'>Bybyy 😘</h2>
+    <p>Kalau gitu aku nanya lagi yaa...</p>
+    <p><b>Kamu mau gak jadi pasangan aku selamanya, bukan cuma valentine doang? 🥺💍</b></p>
+    <button onclick='finalYes()'>MAU BANGET 😭💜</button>
     <br>
-    <button onclick='start()'>IH ANJING BANGET</button>
   </div>`;
 }
 
