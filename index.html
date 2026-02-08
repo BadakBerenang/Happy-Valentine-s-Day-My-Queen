@@ -10,7 +10,7 @@ body{
   font-family:Arial;
   color:white;
   overflow:hidden;
-  background:url('WhatsApp Image 2026-02-09 at 02.32.21.jpeg') center/cover no-repeat fixed;
+  background:url('YOUR_PHOTO_URL_HERE') center/cover no-repeat fixed;
 }
 .bg-overlay{
   position:fixed;
@@ -205,7 +205,7 @@ function yesStep4(){
     <p><b>CEPONGIN CEPOT TERUS TELEN</b></p>
     <button onclick='finalYes()'>CINI AKU CEPONG SAMPE CROT 999 KALI 💦💦</button>
     <br>
-    <button onclick='finalYes()'>OGAHHH SEPONG AJA SENDIRI 😒😒</button>
+    <button onclick='finalOke()'>OGAHHH SEPONG AJA SENDIRI 😒😒</button>
   </div>`;
 }
 
@@ -213,13 +213,12 @@ function finalYes(){
   for(let i=0;i<100;i++){
     let c=document.createElement('div');
     c.className='confetti';
-    c.innerText='😘💋👅💦';
     c.style.left=Math.random()*100+'vw';
     c.style.top='-10px';
     document.body.appendChild(c);
     setTimeout(()=>c.remove(),4000);
   }
-  alert('I LOVE YOU MORE MY SUNSHINE 😘💋👅💦');
+  alert('YAUDA CEPONGIN DULU BARU LANJUT BACA HIHIHIHI');
   document.getElementById('app').innerHTML=`
   <div class='card'>
     <h2 class='neon'>HIHIHI, MAU AKU UPDATE LAGI GA PERTANYAAN DAN CHALLENGENYA?</h2>
@@ -228,6 +227,10 @@ function finalYes(){
     <p><b>CIUM DONG BYBY 😁</b></p>
     <button onclick='start()'>BEKBEKBEKBEKBEK</button>
   </div>`;
+}
+
+function finalOke(){
+  alert('YAHAHAHAHA HARUS MAU, KALO GA DISINI TERUS WLEE');
 }
 
 function qr(){
